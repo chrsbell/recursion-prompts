@@ -70,6 +70,18 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+    //reduce the difference between x and y
+    var difference = x-y;
+    y = x - (difference - 1*Math.sign(difference));
+    //difference must be 2 or larger for there to be a range
+    if (Math.abs(difference) < 2) {
+      return [];
+    } else if (Math.abs(difference) === 2) {
+      return [y];
+    }
+    var arr = range(x, y).concat([y]);
+    javascript: console.log(arr);
+    return arr;
 };
 
 // 7. Compute the exponent of a number.
